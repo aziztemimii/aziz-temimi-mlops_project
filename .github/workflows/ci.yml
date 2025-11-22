@@ -45,10 +45,9 @@ jobs:
       run: |
         pytest || true
 
-    # ---- 5) Exécuter ton pipeline ML ----
-    - name: Test ML Pipeline
-      run: |
-        python3 main.py << EOF
-3
+- name: Test ML Pipeline
+  run: |
+    python3 main.py << 'EOF'
+    3
 EOF
 
