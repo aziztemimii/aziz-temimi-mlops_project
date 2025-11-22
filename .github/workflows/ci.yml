@@ -40,11 +40,17 @@ jobs:
       run: |
         bandit -r . || true
 
-    # ---- 4) Tests unitaires ----
-    - name: Run Pytest
-      run: |
-        pytest || true
+# ---- 4) Tests unitaires ----
+- name: Run Pytest
+  run: |
+    pytest || true
 
-- name: Test ML Pipeline
-  run: echo "3" | python3 main.py
+# ---- 5) Exécuter toutes les étapes du pipeline ML ----
+- name: Test all ML steps
+  run: |
+    echo "1" | python3 main.py
+    echo "2" | python3 main.py
+    echo "3" | python3 main.py
+    echo "4" | python3 main.py
+    echo "5" | python3 main.py
 
