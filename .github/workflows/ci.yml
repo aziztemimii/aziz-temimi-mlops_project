@@ -45,6 +45,7 @@ jobs:
   run: |
     pytest || true
 
+
 # ---- 5) Exécuter toutes les étapes du pipeline ML ----
 - name: Test all ML steps
   run: |
