@@ -39,11 +39,11 @@ jobs:
     - name: Security scan (Bandit)
       run: |
         bandit -r . || true
-
 # ---- 4) Tests unitaires ----
 - name: Run Pytest
   run: |
     pytest || true
+
 
 
 # ---- 5) Exécuter toutes les étapes du pipeline ML ----
