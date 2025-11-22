@@ -46,8 +46,5 @@ jobs:
         pytest || true
 
 - name: Test ML Pipeline
-  run: |
-    python3 main.py << 'EOF'
-    3
-EOF
+  run: echo "3" | python3 main.py
 
