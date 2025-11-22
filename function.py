@@ -7,6 +7,7 @@ from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import joblib
 
+
 #####################################################
 # 1. PREPARE DATA
 #####################################################
@@ -39,11 +40,7 @@ def train_model(model_name, X_train, y_train):
         model = RandomForestClassifier(n_estimators=100, random_state=42)
 
     elif model_name == "ada":
-        model = AdaBoostClassifier(
-            n_estimators=100, 
-            learning_rate=1.0, 
-            random_state=42
-        )
+        model = AdaBoostClassifier(n_estimators=100, learning_rate=1.0, random_state=42)
 
     elif model_name == "xgb":
         model = XGBClassifier(
@@ -51,7 +48,7 @@ def train_model(model_name, X_train, y_train):
             max_depth=3,
             learning_rate=0.1,
             eval_metric="mlogloss",
-            random_state=42
+            random_state=42,
         )
 
     else:
@@ -99,4 +96,3 @@ def load_model(model_path="model.pkl", scaler_path="scaler.pkl"):
     scaler = joblib.load(scaler_path)
     print("Modèle chargé avec succès !")
     return model, scaler
-
