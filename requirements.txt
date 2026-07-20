@@ -1,9 +1,6 @@
-numpy 
+numpy
 pandas
 scikit-learn
-matplotlib
-jupyter
-mlflow
-fastapi
-uvicorn
+xgboost
 joblib
+matplotlib
